@@ -5,4 +5,8 @@ require ::File.expand_path('../config/environment',  __FILE__)
 #For more information, see: https://github.com/tylerhunt/rack-canonical-host#usage
 use Rack::CanonicalHost, ENV['CANONICAL_HOST'] if ENV['CANONICAL_HOST']
 
+require 'coverband'
+Coverband.configure
+use Coverband::Middleware
+
 run Rails.application
