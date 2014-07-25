@@ -4,7 +4,7 @@ baseline = Coverband.parse_baseline
 Coverband.configure do |config|
   config.root              = Dir.pwd
   config.coverage_baseline = baseline
-  # config.root_paths        = ['/app/']
+  config.root_paths        = ['/app/']
   config.ignore            = ['vendor']
   config.startup_delay     = Rails.env.production? ? 10 : 1
   config.percentage        = Rails.env.production? ? 15.0 : 100.0
