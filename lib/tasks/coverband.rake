@@ -31,5 +31,19 @@ namespace :coverband do
         exit 1
       end
     end
+
+    desc 'Baseline coverage for production app'
+    task :clear do
+      redis_url = nil
+      Bundler.with_clean_env do
+        redis_url = `heroku config:get REDISTOGO_URL`.strip
+      end
+      if redis_url.present?
+        sh "REDISTOGO_URL='#{redis_url}' rake coverband:baseline"
+      else
+        puts 'Could not fetch the redis URL from heroku!'
+        exit 1
+      end
+    end
   end
 end

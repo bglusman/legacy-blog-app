@@ -8,4 +8,5 @@ INTEGRATION_TASKS = %w(
   jumpup:finish
   jumpup:heroku:finish
   coverband:heroku:clear
+  coverband:heroku:baseline
 )
