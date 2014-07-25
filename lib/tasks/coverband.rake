@@ -33,7 +33,7 @@ namespace :coverband do
     end
 
     desc 'Baseline coverage for production app'
-    task :clear do
+    task :baseline do
       redis_url = nil
       Bundler.with_clean_env do
         redis_url = `heroku config:get REDISTOGO_URL`.strip
