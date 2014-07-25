@@ -7,4 +7,5 @@ INTEGRATION_TASKS = %w(
   jumpup:coverage_verify
   jumpup:finish
   jumpup:heroku:finish
+  coverband:heroku:clear
 )
