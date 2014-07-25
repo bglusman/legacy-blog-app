@@ -1,4 +1,10 @@
 GIT
+  remote: git://github.com/Helabs/jumpup-heroku.git
+  revision: 2da9564f39577b15590e3db959abbc085b0b5d53
+  specs:
+    jumpup-heroku (0.0.5)
+
+GIT
   remote: git://github.com/kch/rack-timeout.git
   revision: 83ca9f5141c1fdcb626820b1601c406e3a3a560a
   ref: 83ca9f5141c1fdcb626820b1601c406e3a3a560a
@@ -107,7 +113,6 @@ GEM
       thor (>= 0.14, < 2.0)
     json (1.8.1)
     jumpup (0.0.5)
-    jumpup-heroku (0.0.5)
     launchy (2.4.2)
       addressable (~> 2.3)
     letter_opener (1.2.0)
@@ -272,7 +277,7 @@ DEPENDENCIES
   jbuilder (= 2.1.1)
   jquery-rails (= 3.1.1)
   jumpup (= 0.0.5)
-  jumpup-heroku (= 0.0.5)
+  jumpup-heroku!
   letter_opener (= 1.2.0)
   neat (= 1.5.1)
   newrelic_rpm (= 3.9.0.229)
