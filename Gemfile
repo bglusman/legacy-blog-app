@@ -18,7 +18,7 @@ gem 'bourbon',                '3.2.3'
 gem 'neat',                   '1.5.1'
 gem 'bitters',                '0.10.0'
 gem 'refills',                '0.0.2'
-gem 'coverband',              '0.0.26', require: false
+gem 'coverband',              '0.1.0.preRC9', require: false
 
 group :production, :staging do
   gem 'rails_12factor',       '0.0.2'
