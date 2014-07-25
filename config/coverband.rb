@@ -13,7 +13,12 @@ Coverband.configure do |config|
   config.startup_delay     = 1
   config.percentage        = 100.0
   config.verbose           = true
+
   if defined? Redis
-    config.redis = Redis.new
+    if ENV.key?('REDISTOGO_URL')
+      config.redis = Redis.new(url: ENV["REDISTOGO_URL"])
+    else
+      config.redis = Redis.new
+    end
   end
 end
