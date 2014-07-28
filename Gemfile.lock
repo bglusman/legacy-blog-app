@@ -74,7 +74,7 @@ GEM
       coffee-script-source
       execjs
     coffee-script-source (1.7.1)
-    coverband (0.1.0.preRC9)
+    coverband (1.0.0)
       json
       redis
       simplecov
@@ -264,7 +264,7 @@ DEPENDENCIES
   bullet (= 4.11.3)
   capybara (= 2.4.1)
   coffee-rails (= 4.0.1)
-  coverband (= 0.1.0.preRC9)
+  coverband (= 1.0.0)
   database_cleaner (= 1.3.0)
   dotenv-rails (= 0.11.1)
   email_spec (= 1.6.0)
