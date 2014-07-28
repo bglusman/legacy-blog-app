@@ -9,7 +9,6 @@ namespace :coverband do
       redis_url = nil
       Bundler.with_clean_env do
         redis_url = `heroku config:get REDISTOGO_URL`.strip
-        # Download baseline from production app
         $stdout.print 'Downloading baseline from production app... '
         `heroku run "bash -c 'rake coverband:baseline &>/dev/null && cat tmp/coverband_baseline.json'" 2>/dev/null 1> tmp/coverband_baseline.json.tmp`
         `tail -n +2 tmp/coverband_baseline.json.tmp > tmp/coverband_baseline.json`
