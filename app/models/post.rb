@@ -1,5 +1,7 @@
 class Post < ActiveRecord::Base
   belongs_to :category
+  has_many   :comments
+
   validates :title, :body, presence: true
 
   # This will look like it has been used
