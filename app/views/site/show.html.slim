@@ -1,0 +1,20 @@
+h2 Post: #{@post.title}
+= simple_format(@post.body)
+
+hr
+
+h3 Comments
+
+- if @post.comments.any?
+  ul
+    = render partial: 'site/comment', collection: @post.comments, as: :comment
+- else
+  p No comments found!
+
+hr
+
+= render 'site/comment_form', post: @post, comment: @comment
+
+hr
+
+= link_to 'Back', posts_path

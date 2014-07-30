@@ -1,0 +1,13 @@
+table
+  thead
+    tr
+      th Title
+      th Date
+      th
+
+  tbody
+    - @posts.each do |post|
+      - if post.highlight?
+        = render 'highlighted_post', post: post
+      - else
+        = render 'regular_post', post: post

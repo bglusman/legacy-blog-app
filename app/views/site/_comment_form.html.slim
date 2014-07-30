@@ -1,0 +1,11 @@
+h5 Leave a comment!
+
+= simple_form_for([post, comment]) do |f|
+  = f.error_notification
+
+  .form-inputs
+    = f.input :author, placeholder: 'Your name', label: false
+    = f.input :body, placeholder: 'Your comment', label: false
+
+  .form-actions
+    = f.button :submit

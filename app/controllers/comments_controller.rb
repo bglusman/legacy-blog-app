@@ -1,9 +1,10 @@
 class CommentsController < ApplicationController
+  before_action :set_post
   before_action :set_comment, only: [:show, :edit, :update, :destroy]
 
   # GET /comments
   def index
-    @comments = Comment.all
+    @comments = @post.comments.all
   end
 
   # GET /comments/1
@@ -12,7 +13,7 @@ class CommentsController < ApplicationController
 
   # GET /comments/new
   def new
-    @comment = Comment.new
+    @comment = @post.comments.new
   end
 
   # GET /comments/1/edit
@@ -21,12 +22,12 @@ class CommentsController < ApplicationController
 
   # POST /comments
   def create
-    @comment = Comment.new(comment_params)
+    @comment = Comment.new(comment_params.merge(post: @post))
 
     if @comment.save
-      redirect_to @comment, notice: 'Comment was successfully created.'
+      redirect_to @post, notice: 'Comment was successfully created.'
     else
-      render :new
+      render 'site/show'
     end
   end
 
@@ -48,11 +49,15 @@ class CommentsController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_comment
-      @comment = Comment.find(params[:id])
+      @comment = @post.comments.find(params[:id])
+    end
+
+    def set_post
+      @post = Post.find(params[:post_id])
     end
 
     # Only allow a trusted parameter "white list" through.
     def comment_params
-      params.require(:comment).permit(:post_id, :author, :body)
+      params.require(:comment).permit(:author, :body)
     end
 end
